@@ -6,6 +6,12 @@ function echoPost($name)
     echo htmlspecialchars($_POST[$name]);
 }
 
+function echoSession($name) 
+{
+    if (isset($_SESSION[$name]))
+    echo htmlspecialchars($_SESSION[$name]);
+}
+
 function checkcredentials($group="None Specificed")
 {
     if ( !isset( $_SESSION['username'] ) )
@@ -19,20 +25,6 @@ function logout_processing()
     session_destroy();
 
 }
-
-function showPost($key) 
-{
-    if ( isset($_POST[$key]) )
-    echo htmlspecialchars($_POST[$key]);
-}
-
-function getPost($key) 
-{
-    if ( isset($_POST[$key]) )
-    return htmlspecialchars($_POST[$key]);
-    return "";
-}
-
 
 
 
